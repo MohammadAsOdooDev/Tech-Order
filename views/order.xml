@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="order_action" model="ir.actions.act_window">
+            <field name="name">Orders Application</field>
+            <field name="res_model">order.order</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="order_view_form" model="ir.ui.view">
+            <field name="name">order.view.form</field>
+            <field name="model">order.order</field>
+            <field name="arch" type="xml">
+                <form string="Create new Order">
+                    <sheet>
+                        <group string="Order Details">
+                            <field name="name"></field>
+                            <field name="type"></field>
+                            <field name="date"></field>
+                            <field name="total_price"></field>
+                        </group>
+                        <group string="Order State">
+                            <field name="state"></field>
+                            <field name="is_urgent"></field>                            
+                        </group>
+                        <group string="Notes">
+                            <field name="note"></field>
+                        </group>
+                        <group string="Tags">
+                            <field name="order_tag_ids" widget="many2many_tags"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+        <record id="order_view_tree" model="ir.ui.view">
+            <field name="name">order.view.tree</field>
+            <field name="model">order.order</field>
+            <field name="arch" type="xml">
+                <tree string="Orders List">
+                    <field name="name"></field>
+                    <field name="total_price"></field>
+                    <field name="state"></field>
+                    <field name="date"></field>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem
+            id="orders_menu"
+            name="Orders"
+            action="order_action"
+            parent="orders_main_menu"
+            sequence="10"/>
+
+    </data>
+    
+</odoo>

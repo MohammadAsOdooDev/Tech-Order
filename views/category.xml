@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+        <record id="meal_category_action" model="ir.actions.act_window">
+            <field name="name">Meal Categories Application</field>
+            <field name="res_model">order.meal_category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="order_category_sub_menu"
+            name="Categories"
+            action="meal_category_action"
+            parent="order_meal_menu"
+            sequence="10"/>
+
+        <record id="meal_category_view_tree" model="ir.ui.view">
+            <field name="name">order.meal_category.view.tree</field>
+            <field name="model">order.meal_category</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="code"></field>
+                    <field name="name"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="meal_category_view_form" model="ir.ui.view">
+            <field name="name">order.meal_category.view.form</field>
+            <field name="model">order.meal_category</field>
+            <field name="arch" type="xml">
+                <form string="Add new category">
+                    <sheet>
+                        <group>
+                            <field name="code"></field>
+                            <field name="name"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+    
+</odoo>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+    <record id="item_action" model="ir.actions.act_window">
+        <field name="name">Item Application</field>
+        <field name="res_model">order.item</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="item_menu"
+        name="Items"
+        action="item_action"
+        parent="orders_main_menu"
+        sequence="10"/>
+
+    <record id="item_view_tree" model="ir.ui.view">
+        <field name="name">item.view.tree</field>
+        <field name="model">order.item</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="id"></field>            
+                <field name="price"></field>            
+                <field name="quantity"></field>            
+            </tree>
+        </field>
+    </record>
+
+    <record id="item_view_form" model="ir.ui.view">
+        <field name="name">item.view.form</field>
+        <field name="model">order.item</field>
+        <field name="arch" type="xml">
+            <form string="Add new Item">
+                <sheet>
+                    <group string="Item data">
+                        <field name="price"></field>
+                        <field name="quantity"></field>
+                        <field name="total_price"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+    </data>
+    
+</odoo>

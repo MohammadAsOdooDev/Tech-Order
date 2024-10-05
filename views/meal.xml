@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+    
+        <record id="meal_action" model="ir.actions.act_window">
+            <field name="name">Meal Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">order.meal</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new meal record!
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="order_meal_menu"
+            name="Meals"
+            sequence="10"
+            parent="orders_main_menu"
+            action="tech_order.meal_action"/>
+
+        
+        <menuitem
+            id="order_meal_sub_menu"
+            name="Meals"
+            action="tech_order.meal_action"
+            parent="order_meal_menu"
+            sequence="10"/>
+
+
+        <record id="meal_view_form" model="ir.ui.view">
+            <field name="name">meal.view.form</field>
+            <field name="model">order.meal</field>
+            <field name="arch" type="xml">
+                <form string="Create a new meal">
+                    <sheet>
+                        <group string="Main Information">
+                            <field name="name"></field>                            
+                            <field name="price"></field>
+                        </group>
+                        <group string="category">
+                            <field name="category_id"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="order_meal_view_tree" model="ir.ui.view">
+            <field name="name">order.meal.view.tree</field>
+            <field name="model">order.meal</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="price"></field>
+                    <field name="category_id"></field>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

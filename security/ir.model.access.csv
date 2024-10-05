@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tech_order_tech_order_meal,tech_order.tech_order_meal,tech_order.model_order_meal,,1,1,1,1
+access_tech_order_tech_order_meal_category,tech_order.tech_order_meal_category,tech_order.model_order_meal_category,,1,1,1,1
+access_tech_order_tech_order_order,tech_order.tech_order_order,tech_order.model_order_order,,1,1,1,1
+access_tech_order_tech_order_tag,tech_order.tech_order_tag,tech_order.model_order_tag,,1,1,1,1
+access_tech_order_tech_order_item,tech_order.tech_order_item,tech_order.model_order_item,,1,1,1,1

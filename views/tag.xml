@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <record id="tag_action" model="ir.actions.act_window">
+            <field name="name">Tags Application</field>
+            <field name="res_model">order.tag</field>
+            <field name="view_mode">tree,form</field>                
+        </record>
+
+        <menuitem
+            id="tag_menu"
+            name="Tags"
+            action="tag_action"
+            parent="orders_main_menu"
+            sequence="10"/>
+
+        <record id="tag_view_form" model="ir.ui.view">
+            <field name="name">tag.view.form</field>
+            <field name="model">order.tag</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group string="Tag Information">
+                            <field name="name"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+    
+
+</odoo>
