@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+    <record id="order_item_action" model="ir.actions.act_window">
+        <field name="name">Item Application</field>
+        <field name="res_model">order.order_item</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="item_menu"
+        name="Items"
+        action="order_item_action"
+        parent="main_app_menu"
+        sequence="10"/>
+
+    <record id="order_item_view_tree" model="ir.ui.view">
+        <field name="name">order.item.view.tree</field>
+        <field name="model">order.order_item</field>
+        <field name="arch" type="xml">
+            <tree string="Items">
+                <field name="item_code"></field>            
+                <field name="price"></field>            
+                <field name="quantity"></field>            
+            </tree>
+        </field>
+    </record>
+
+    <record id="order_item_view_search" model="ir.ui.view">
+        <field name="name">order_item.view.search</field>
+        <field name="model">order.order_item</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <filter name="order_item_view_search_large_quantity" string="Large Quantity" domain="[('quantity', '>', 5)]"  />   
+            </search>
+        </field>
+    </record>
+
+    <record id="order_item_view_form" model="ir.ui.view">
+        <field name="name">order.item.view.form</field>
+        <field name="model">order.order_item</field>
+        <field name="arch" type="xml">
+            <form string="Add new Item" create="false">
+                <sheet>
+                    <h1>
+                        <field name="item_code"></field>
+                    </h1>
+                    <group string="Item data">
+                        <field name="price"></field>
+                        <field name="quantity"></field>
+                        <field name="total_price"></field>
+                    </group>
+                    <group string="Meal">
+                        <field name="meal_id"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+    </data>
+    
+</odoo>

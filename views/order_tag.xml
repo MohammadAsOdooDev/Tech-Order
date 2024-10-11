@@ -3,27 +3,28 @@
 
     <data>
     
-        <record id="tag_action" model="ir.actions.act_window">
+        <record id="order_tag_action" model="ir.actions.act_window">
             <field name="name">Tags Application</field>
-            <field name="res_model">order.tag</field>
+            <field name="res_model">order.order_tag</field>
             <field name="view_mode">tree,form</field>                
         </record>
 
         <menuitem
-            id="tag_menu"
+            id="order_tag_menu"
             name="Tags"
-            action="tag_action"
+            action="order_tag_action"
             parent="orders_main_menu"
-            sequence="10"/>
+            sequence="20"/>
 
-        <record id="tag_view_form" model="ir.ui.view">
-            <field name="name">tag.view.form</field>
-            <field name="model">order.tag</field>
+        <record id="order_tag_view_form" model="ir.ui.view">
+            <field name="name">order.tag.view.form</field>
+            <field name="model">order.order_tag</field>
             <field name="arch" type="xml">
-                <form string="">
+                <form string="Add a new order tag">
                     <sheet>
                         <group string="Tag Information">
                             <field name="name"></field>
+                            <field name="color"></field>
                         </group>
                     </sheet>
                 </form>

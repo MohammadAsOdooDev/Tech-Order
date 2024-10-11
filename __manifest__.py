@@ -18,18 +18,22 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': [
+        'base',
+        'product',
+    ],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/meal.xml',
-        'views/tag.xml',
-        'views/category.xml',
-        'views/order.xml',
         'views/templates.xml',
-        'views/item.xml'
+        'views/meal.xml',
+        'views/order.xml',
+        'views/order_tag.xml',
+        'views/meal_category.xml',
+        'views/order_item.xml',
+        'views/meal_feedback.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

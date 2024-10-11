@@ -18,7 +18,7 @@
             id="order_meal_menu"
             name="Meals"
             sequence="10"
-            parent="orders_main_menu"
+            parent="main_app_menu"
             action="tech_order.meal_action"/>
 
         
@@ -45,6 +45,18 @@
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record id="meal_view_search" model="ir.ui.view">
+            <field name="name">meal.view.search</field>
+            <field name="model">order.meal</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <group name="meal_view_search_group" string="Group Meals By:">
+                        <filter name="meal_view_search_group_category" string="Categories" context="{'group_by': 'category_id'}" />
+                    </group>
+                </search>
             </field>
         </record>
 

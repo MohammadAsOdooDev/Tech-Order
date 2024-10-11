@@ -1,7 +1,7 @@
 <odoo>
   <data>
         <menuitem
-            id="orders_main_menu"
+            id="main_app_menu"
             name="Tech Orders"
             sequence="10"/>
   </data>
